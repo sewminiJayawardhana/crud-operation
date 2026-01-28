@@ -4,11 +4,10 @@ const cors = require("cors");
 const app = express();
 const studentRoutes = require("./routes/studentRoutes");
 
-app.use("/students", studentRoutes);
-
-
 app.use(cors());
 app.use(express.json());
+
+app.use("/students", studentRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend is running");
